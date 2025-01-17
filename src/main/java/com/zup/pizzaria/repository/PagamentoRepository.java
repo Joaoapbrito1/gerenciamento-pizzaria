@@ -1,4 +1,7 @@
 package com.zup.pizzaria.repository;
 
-public interface PagamentoRepository {
+import com.zup.pizzaria.models.Pedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PagamentoRepository extends JpaRepository<Pedido, Long> {
 }
