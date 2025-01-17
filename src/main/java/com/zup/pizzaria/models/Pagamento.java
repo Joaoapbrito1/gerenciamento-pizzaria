@@ -13,14 +13,14 @@ public class Pagamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long pedidoId;
-    private String formaPagamento;
+    private FormaPagamento formaPagamento;
     private Double valorPago;
     private LocalDateTime dataHoraPagamento;
 
     public Pagamento(){
     }
 
-    public Pagamento(Long pedidoId, String formaPagamento, double valorPago, LocalDateTime dataHoraPagamento){
+    public Pagamento(Long pedidoId, FormaPagamento formaPagamento, double valorPago, LocalDateTime dataHoraPagamento){
         this.pedidoId = pedidoId;
         this.formaPagamento = formaPagamento;
         this.valorPago = valorPago;
@@ -43,11 +43,11 @@ public class Pagamento {
         this.pedidoId = pedidoId;
     }
 
-    public String getFormaPagamento(){
+    public FormaPagamento getFormaPagamento() {
         return formaPagamento;
     }
 
-    public void setFormaPagamento(String formaPagamento){
+    public void setFormaPagamento(FormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 
