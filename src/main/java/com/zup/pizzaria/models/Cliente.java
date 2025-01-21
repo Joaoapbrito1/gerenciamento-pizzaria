@@ -18,14 +18,20 @@ public class Cliente {
     @NotBlank(message = "O nome não pode ser vazio ou nulo.")
     private String nome;
 
+    @NotBlank(message = "O e-mail não pode ser vazio.")
     @Email(message = "O e-mail deve ser válido.")
-    @NotBlank(message = "O e-mail não pode ser vazio ou nulo.")
     private String email;
 
-    @Pattern(regexp = "\\d{8,}", message = "O telefone deve conter apenas números e ter no mínimo 8 dígitos.")
+    @NotBlank(message = "O telefone não pode ser vazio.")
+    @Pattern(regexp = "\\d+", message = "O telefone deve conter apenas números.")
+    @Size(min = 8, message = "O telefone deve ter no mínimo 8 dígitos.")
     private String telefone;
 
-    // Getters e Setters
+    public Cliente(String nome, String email, String telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
     public Long getId() {
         return id;
     }
