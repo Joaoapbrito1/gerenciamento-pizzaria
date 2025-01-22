@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping
 public class ClienteController {
 
     private final ClienteService clienteService;
@@ -18,7 +18,7 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @PostMapping
+    @PostMapping("/clientes")
     public ResponseEntity<ClienteDTO> criarCliente(@Valid @RequestBody ClienteRequestDTO clienteRequestDTO) {
         ClienteDTO clienteDTO = clienteService.criarCliente(clienteRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteDTO);
