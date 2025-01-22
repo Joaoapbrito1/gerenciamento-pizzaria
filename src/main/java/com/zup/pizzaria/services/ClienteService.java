@@ -7,6 +7,8 @@ import com.zup.pizzaria.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ClienteService {
 
@@ -30,5 +32,8 @@ public class ClienteService {
                 clienteSalvo.getEmail(),
                 clienteSalvo.getTelefone()
         );
+    }
+    public List<Cliente> todosClientes(){
+        return  clienteRepository.findAll();
     }
 }
